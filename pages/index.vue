@@ -156,6 +156,24 @@
           />
         </v-card-text>
       </v-card>
+      <v-expansion-panels class="mb-5">
+        <v-expansion-panel>
+          <v-expansion-panel-header>
+            答案提示时长……
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <v-slider
+              v-model="answerPromptTimeout"
+              max="5"
+              min="0.5"
+              step="0.5"
+              thumb-label
+              ticks
+              dense
+            />
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
       <v-expansion-panels>
         <v-expansion-panel>
           <v-expansion-panel-header>
@@ -301,7 +319,8 @@ export default {
         { text: '中文', value: 'meaning' },
         { text: '假名', value: 'kana' },
         { text: '日语汉字', value: 'kanji' }
-      ]
+      ],
+      answerPromptTimeout: 2.5
     }
   },
   computed: {
@@ -358,7 +377,7 @@ export default {
             this.currentCourseDone = true
           }
         }
-      }, 1000)
+      }, this.answerPromptTimeout * 1000)
       return this.correct
     },
     removeSelectedErrors () {
