@@ -70,12 +70,11 @@
             label="假名/罗马音(↵确认)"
             :success="!newWord && correct"
             :error="!newWord && !correct"
+            :error-count="!newWord && !correct ? 1 : 0"
+            :error-messages="(!newWord && !correct) ? [wordList[wordIndex].kanji + '(' + wordList[wordIndex].kana + ')'] : undefined"
             @keydown.enter="checkAnswer"
-            @blur="checkAnswer"
           >
-            <v-icon v-if="newWord" slot="append" style="color: transparent !important;">
-              mdi-checkbox-marked-circle
-            </v-icon>
+            <div v-if="newWord" slot="append" style="height: 24px; width: 24px; display: block;" />
             <v-icon
               v-if="!newWord && correct"
               slot="append"
