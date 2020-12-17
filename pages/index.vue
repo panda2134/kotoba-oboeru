@@ -244,7 +244,7 @@ export default {
 
     for (const courseInfo of course) {
       const courseFileName = courseInfo.file_name
-      const wordFile = await $content('/words/' + courseFileName, { text: true }).fetch()
+      const wordFile = await $content('words/' + courseFileName, { text: true }).fetch()
       courseInfo.content = wordFile.body
     }
 
