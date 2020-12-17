@@ -51,7 +51,7 @@
           </v-btn>
         </v-card-title>
         <v-card-title v-else>
-          <v-btn depressed class="mr-5" @click="() => {review = false}">
+          <v-btn depressed class="mr-5" @click="() => {review = false; wordIndex = 0; input = ''}">
             <v-icon left>
               mdi-arrow-left
             </v-icon>
