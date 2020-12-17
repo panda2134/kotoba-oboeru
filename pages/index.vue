@@ -28,7 +28,7 @@
           <v-btn
             depressed
             :disabled="courseIndex === 0"
-            @click="() => {courseIndex--; wordIndex = 0;}"
+            @click="() => {courseIndex--; wordIndex = 0; input = ''}"
           >
             <v-icon left>
               mdi-arrow-left
@@ -42,7 +42,7 @@
             v-show="!review"
             depressed
             :disabled="courseIndex === course.length - 1"
-            @click="() => {courseIndex++; wordIndex = 0;}"
+            @click="() => {courseIndex++; wordIndex = 0; input = ''}"
           >
             下一课
             <v-icon right>
