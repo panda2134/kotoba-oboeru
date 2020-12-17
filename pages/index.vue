@@ -67,7 +67,7 @@
           </div>
           <v-text-field
             v-model="input"
-            label="假名/罗马音(enter确认)"
+            label="假名/罗马音(↵确认)"
             :success="!newWord && correct"
             :error="!newWord && !correct"
             @keydown.enter="checkAnswer"

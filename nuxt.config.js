@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import zhHans from 'vuetify/es5/locale/zh-Hans'
 
 const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES'
@@ -66,6 +67,10 @@ export default {
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
+    lang: {
+      locales: { zhHans },
+      current: 'zhHans'
+    },
     customVariables: ['~/assets/variables.scss'],
     theme: {
       themes: {
