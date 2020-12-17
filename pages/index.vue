@@ -209,6 +209,12 @@
                 </tbody>
                 <tbody>
                   <tr>
+                    <td>shin<b>'</b>yuu</td>
+                    <td>しんゆう</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
                     <td>yoro<b>shi</b>ku</td>
                     <td>よろしく</td>
                   </tr>
