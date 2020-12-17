@@ -358,7 +358,7 @@ export default {
             this.currentCourseDone = true
           }
         }
-      }, 1000)
+      }, 2500)
       return this.correct
     },
     removeSelectedErrors () {
