@@ -234,6 +234,14 @@
             保存在浏览器的本地存储中。我不会收集你的任何信息。
           </v-expansion-panel-content>
         </v-expansion-panel>
+        <v-expansion-panel>
+          <v-expansion-panel-header>
+            晚上看白色太晃眼睛？
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            在设置里面把手机或者电脑改成黑色主题，刷新页面后配色会跟随操作系统的配置。
+          </v-expansion-panel-content>
+        </v-expansion-panel>
       </v-expansion-panels>
       <v-snackbar
         v-model="currentCourseDone"
