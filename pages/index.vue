@@ -71,7 +71,7 @@
             :success="!newWord && correct"
             :error="!newWord && !correct"
             :error-count="!newWord && !correct ? 1 : 0"
-            :error-messages="(!newWord && !correct) ? [wordList[wordIndex].kanji + '(' + wordList[wordIndex].kana + ')'] : undefined"
+            :error-messages="(!newWord && !correct) ? [answerDisplayStyle] : undefined"
             @keydown.enter="checkAnswer"
           >
             <div v-if="newWord" slot="append" style="height: 24px; width: 24px; display: block;" />
@@ -159,7 +159,7 @@
       <v-expansion-panels class="mb-5">
         <v-expansion-panel>
           <v-expansion-panel-header>
-            答案提示时长……
+            答案提示时长设置
           </v-expansion-panel-header>
           <v-expansion-panel-content>
             <v-slider
@@ -319,11 +319,21 @@ export default {
         { text: '中文', value: 'meaning' },
         { text: '假名', value: 'kana' },
         { text: '日语汉字', value: 'kanji' }
-      ],
-      answerPromptTimeout: 2.5
+      ]
     }
   },
   computed: {
+    answerDisplayStyle () {
+      return this.wordList[this.wordIndex].kanji + '(' + this.wordList[this.wordIndex].kana + ')'
+    },
+    answerPromptTimeout: {
+      get () {
+        return this.$store.state.localStorage.answerPromptTimeout
+      },
+      set (value) {
+        return this.setAnswerPrompt(value)
+      }
+    },
     errorList: {
       get () {
         return this.$store.state.localStorage.errorList
@@ -353,7 +363,8 @@ export default {
       appendError: 'localStorage/appendError',
       removeError: 'localStorage/removeError',
       setError: 'localStorage/setError',
-      markUsed: 'localStorage/markUsed'
+      markUsed: 'localStorage/markUsed',
+      setAnswerPrompt: 'localStorage/setAnswerPrompt'
     }),
     checkAnswer () {
       const { kana } = this.wordList[this.wordIndex]

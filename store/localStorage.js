@@ -1,4 +1,4 @@
-export const state = () => ({ errorList: [], usedBefore: false })
+export const state = () => ({ errorList: [], usedBefore: false, answerPromptTimeout: 1.5 })
 
 export const mutations = {
   appendError (state, { meaning, kana, kanji }) {
@@ -19,5 +19,8 @@ export const mutations = {
   },
   markUsed (state) {
     state.usedBefore = true
+  },
+  setAnswerPrompt (state, timeout) {
+    state.answerPromptTimeout = timeout
   }
 }
