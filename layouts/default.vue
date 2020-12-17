@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app :dark="isDark">
     <v-app-bar
       fixed
       app
@@ -21,6 +21,14 @@ export default {
     return {
       title: '日语背单词'
     }
+  },
+  computed: {
+    isDark () {
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+    }
+  },
+  beforeMount () {
+    this.$vuetify.theme.dark = this.isDark
   }
 }
 </script>

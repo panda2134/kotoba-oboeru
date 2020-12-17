@@ -25,7 +25,11 @@
       </v-dialog>
       <v-card class="mb-5">
         <v-card-title v-if="!review">
-          <v-btn :disabled="courseIndex === 0" @click="() => {courseIndex--}">
+          <v-btn
+            depressed
+            :disabled="courseIndex === 0"
+            @click="() => {courseIndex--; wordIndex = 0;}"
+          >
             <v-icon left>
               mdi-arrow-left
             </v-icon>
@@ -36,8 +40,9 @@
           <v-spacer />
           <v-btn
             v-show="!review"
+            depressed
             :disabled="courseIndex === course.length - 1"
-            @click="() => {courseIndex++}"
+            @click="() => {courseIndex++; wordIndex = 0;}"
           >
             下一课
             <v-icon right>
@@ -46,7 +51,7 @@
           </v-btn>
         </v-card-title>
         <v-card-title v-else>
-          <v-btn class="mr-5" @click="() => {review = false}">
+          <v-btn depressed class="mr-5" @click="() => {review = false}">
             <v-icon left>
               mdi-arrow-left
             </v-icon>
@@ -90,8 +95,13 @@
         <v-card-actions>
           <v-btn
             :disabled="!wordList.length || (wordIndex === 0)"
+            small
+            color="secondary"
             @click="() => {wordIndex--;}"
           >
+            <v-icon left>
+              mdi-arrow-left
+            </v-icon>
             前一词
           </v-btn>
           <v-spacer />
@@ -99,9 +109,14 @@
           <v-spacer />
           <v-btn
             :disabled="!wordList.length || (wordIndex === wordList.length - 1)"
+            small
+            color="primary"
             @click="() => {wordIndex++;}"
           >
             后一词
+            <v-icon right>
+              mdi-arrow-right
+            </v-icon>
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -110,16 +125,24 @@
           <span>错误列表</span>
           <v-spacer />
           <v-btn
+            color="primary"
             :disabled="!(selectedErrors.length)"
             @click="() => {reviewWords=selectedErrors; review = true; wordIndex = 0;}"
           >
+            <v-icon left>
+              mdi-book-multiple
+            </v-icon>
             复习
           </v-btn>
           <v-btn
             class="ml-2"
+            color="error"
             :disabled="!(selectedErrors.length)"
             @click="removeSelectedErrors"
           >
+            <v-icon left>
+              mdi-delete
+            </v-icon>
             删除
           </v-btn>
         </v-card-title>
@@ -216,7 +239,7 @@
         v-model="currentCourseDone"
         :timeout="2000"
       >
-        本课单词已背完！
+        列表中单词已背完！
         <template
           v-slot:action="{ attrs }"
         >
