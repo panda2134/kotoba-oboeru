@@ -17,7 +17,7 @@
     "@nuxt/content": "^1.9.0",
     "@nuxtjs/pwa": "^3.3.3",
     "core-js": "^3.8.2",
-    "nuxt": "^2.14.6",
+    "nuxt": "^2.15.2",
     "nuxt-vuex-localstorage": "^1.2.7",
     "simple-romaji-kana": "^2.4.2",
     "vue-async-computed": "^3.9.0"
