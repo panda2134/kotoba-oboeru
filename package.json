@@ -14,8 +14,8 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
+    "@nuxtjs/pwa": "^3.3.5",
     "@nuxt/content": "^1.14.0",
-    "@nuxtjs/pwa": "^3.3.3",
     "core-js": "^3.11.0",
     "nuxt": "^2.15.4",
     "nuxt-vuex-localstorage": "^1.2.7",
