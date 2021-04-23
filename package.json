@@ -14,10 +14,10 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
-    "@nuxt/content": "^1.9.0",
     "@nuxtjs/pwa": "^3.3.5",
-    "core-js": "^3.10.2",
-    "nuxt": "^2.15.2",
+    "@nuxt/content": "^1.14.0",
+    "core-js": "^3.11.0",
+    "nuxt": "^2.15.4",
     "nuxt-vuex-localstorage": "^1.2.7",
     "simple-romaji-kana": "^2.4.2",
     "vue-async-computed": "^3.9.0"
